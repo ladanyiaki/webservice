@@ -2,36 +2,53 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Kiwi Store - Login </title>
-	<link rel="stylesheet" href="login.css">     
-	<link rel="shortcut icon" href="images/kiwi3.png" />
+	<title>Kiwi Store - Register </title>
+	<link rel="stylesheet" href="register.css">     
+	<link rel="shortcut icon" href="../images/kiwi3.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  	
-	<img src = "images/kiwi_store.png" class = "logo" alt="kiwi_logo"/> <!-- Lehet CSS-be el kell rakni -->
+  	<!-- <img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/> -->
+<!--	<div id="parent"> for centering content -->
 	<div class = "center pos_border">
-		
-		<p id="login_text">Hello, please sign in!</p>
+		<img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/>
+
+		<p id="reg_text">Create an account!</p>
 		<form method = "post" autocomplete = "on">
-			<p id="ind" class = "center" >
-				<label>Username</label><br>
+			<p  class = "ind" >
+				<label>First Name*</label>
+				<input type="text" placeholder="John" name="firstname" required />
+			</p>
+			<p  class = "ind" >
+				<label>Last Name*</label>
+				<input type="text" placeholder="Smith" name="lastname" required />
+			</p>
+						
+			<p  class = "ind" >
+				<label>Username*</label>
 				<input type="text" placeholder="Username" name="login" required />
 			</p>
-			<p id= "ind">
-				<label>Password</label><br>
+			<p class = "ind">
+				<label>Password*</label><br>
 				<input type="password" placeholder="Password" name="password" required />			
 			</p>
-			<label>
-				<input type="checkbox" name="remember"/> Remember me
-			</label><br><br>
+			<p  class = "ind" >
+				<label>E-mail address*</label>
+				<input type="email" placeholder="example@gmail.com" name="email" required />
+			</p>
+			<p  class = "ind" >
+				<label>Phone number</label>
+				<input type="tel" placeholder="+36201234567" name="phone" />
+			</p>
 			
-			<input type="submit" value = "Login"/>
-		</form><br>
-	<a href="../register/register.html">Create an account</a>
- 
-	<!-- <img src="images/kiwi_fruit.png" class="bottom_left" alt = "bot_left_logo"/>  -->
+			
+			<input type="submit" value = "Create account"/>
+		</form>
+	<p> Already got an account? 
+		<a href="../login/login.html">Sign in</a>  <!-- MISSING -->
+	</p>
+	<!-- <img src="../images/kiwi_fruit.png" class="bottom_left" alt = "bot_left_logo"/>  -->
 	</div>
-
+<!--	</div>   -->
 	
 </body>
