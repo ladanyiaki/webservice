@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kiwi Store - Login </title>
+	<link rel="stylesheet" href="login.css">     
+	<link rel="shortcut icon" href="../images/kiwi3.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 html {
 	font-family: Helvitica, Arial, sans-serif ;
 }
@@ -16,8 +25,8 @@ height: auto;
 background-color: #d3f8d3;
 min-width: 250px;
 opacity: 0.95;
-padding: 20px;
-margin: 100px;
+padding: 15pt;
+margin: 8pt;
 }
 
 .logo {
@@ -39,7 +48,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1.15em;
+  font-size: 1.15 em;
   font-weight: bold;
 }
 
@@ -56,7 +65,7 @@ input[type=text],input[type=password],input[type=tel],input[type=email], select{
 
 
 #remember{
-	font-size: 0.95em; /*close: 0.3em*/
+	font-size: 0.3 em;
 }
 
 body
@@ -133,3 +142,33 @@ a:active{
   align-items: center;
   justify-content: center;
 }*/
+</style>
+</head>
+<body>
+  	<!-- <img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/> --> <!-- Lehet CSS-be el kell rakni -->
+<!--	<div id="parent"> for centering content -->
+	<div class = "center pos_border">
+		<img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/> <!-- Lehet CSS-be el kell rakni -->
+		<p id="login_text">Hello, please sign in!</p>
+		<form method = "post" autocomplete = "on">
+			<p  class = "center ind" >
+				<label>Username</label><br>
+				<input type="text" placeholder="Username" name="login" required />
+			</p>
+			<p class = "ind">
+				<label>Password</label><br>
+				<input type="password" placeholder="Password" name="password" required />			
+			</p>
+			<label>
+				<input type="checkbox" name="remember"/> Remember me
+			</label><br><br>
+			
+			<input type="submit" value = "Login"/>
+		</form><br>
+	<a href="../register/register.html">Create an account</a>
+	</div>
+	<!-- <img src="images/kiwi_fruit.png" class="bottom_left" alt = "bot_left_logo"/>  -->
+<!--	</div>   -->
+
+	
+</body>
