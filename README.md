@@ -1,3 +1,3 @@
 # webservice
 Webservice homework
-HTML, CSS and JS files
+HTML, CSS and PHP files
