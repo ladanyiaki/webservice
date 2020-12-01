@@ -31,8 +31,13 @@ nav ul li{
 	font-family: Times New Roman;
 }
 
-/*For header*/
+#category{
+	background-color: #ccffcc;
+	padding: 1px;
+	border-radius: 5px;
+}
 
+/*For header*/
 .toright a{
 	float: right;
 }
