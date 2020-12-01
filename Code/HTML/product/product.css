@@ -137,83 +137,6 @@ nav ul li{
 	font-weight: bold;
 }
 
-#products ul.items {
-	display: inline-block;
-	list-style-type: none;
-	margin: 0 auto 16px;
-	padding: 0;
-}
-
-#products ul.items li {
-	float: left;
-	color: #8f6f05;
-	height: 340px;
-	width: 216px;
-	margin-bottom: 0px;
-	margin-right: 40px;
-	margin-top: 10px;
-}
-
-#products ul.items li span {
-	background: #ffffff;
-	display: block;
-	/*margin-bottom: 10px;*/
-	/*padding: 6px 6px 14px;*/
-}
-
-#products ul.items li span img {
-/*	border: 2px solid #95d097;*/
-	width:100%;
-/*	height: 100%;*/
-/*	height: auto;*/
-}
-
-#products ul.items li a span:hover{
-	font-size: 1em;
-	text-decoration: underline;
-}
-
-#products ul.items li a.view:link{
-	font-size: 0.8em;
-	text-decoration: underline;
-}
-
-#products ul.items li a.view:active{
-	font-size: 0.8em;
-	text-decoration: underline;
-}
-
-#products ul.items li a.view:visited{
-	font-size: 0.3em;
-	text-decoration: underline;
-	color: black;
-}
-
-#products ul.items li span.underimg{
-	background: #ffffff;
-	display: inline;
-	height: auto;
-	width: auto;
-	margin-bottom: 2px;	
-	margin-top: 10px;
-/*	padding: 6px 6px 14px;*/
-	float: left;
-}
-#products ul.items li:hover ~ .underimg{
-	text-decoration: underline;
-}
-
-#products ul.items li span.underimg2{
-	background: #ffffff;
-	display: inline;
-	height: auto;
-	width: auto;
-	margin-bottom: 2px;
-	margin-top: 10px;
-/*	padding: 6px 6px 14px;*/
-	float:right;
-}
-
 .center_img{
 	vertical-align: middle;
 	width: 100%;
@@ -235,7 +158,8 @@ footer{
 	padding-top: 2px;
 }
 
-.footerr a:visited, .footerr a:link, .footerr a:hover{
+/*Set Footer properties for links*/
+.footerr a:visited, .footerr a:link, .footerr a:hover{ 
 	color: gray;
 	font-size: 0.9em;
 	padding-top: 3px;

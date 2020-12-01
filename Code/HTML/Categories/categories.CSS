@@ -35,6 +35,10 @@ nav ul li{
 	background-color: #ccffcc;
 	padding: 1px;
 	border-radius: 5px;
+	padding-left: 25px;
+	font-style: bold;
+	font-size: 1.2em;
+	font-family: Texturina, serif;
 }
 
 /*For header*/
@@ -75,6 +79,13 @@ nav ul li{
 	font-weight: bold;
 	text-decoration: none;
 	border-color: #95d097;
+}
+
+/*make logo background transparent when clicked*/
+#transparent a:active{
+	background-color: #ffffff00;
+		/*background-color: green;*/
+
 }
 
 /*Categories*/
@@ -224,12 +235,6 @@ nav ul li{
 	width: 216px;
 	margin: 0px;
 	padding: 0px;
-}
-
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
 }
 
 footer{
