@@ -77,6 +77,11 @@ nav ul li{
 	border-color: #95d097;
 }
 
+/*make logo background transparent when clicked*/
+#transparent a:active{
+	background-color: #ffffff00;
+}
+
 /*Categories*/
 .lia2 a{
 	vertical-align: middle;

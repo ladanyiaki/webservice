@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<!-- List categories -->
+<?php
+session_start();
+print('
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -21,50 +25,42 @@
 	<div><!--  MÉRETEZD ÁT ADAPTÍVAN, ha kicsi az ablak összetolódik  -->
 		<nav title = "Hello there!"> <!-- Categories -->
 			<ul class = "lia2" id = "navigation2">
-<?php
+');
 
-	function listcat(){
-	$con = mysqli_connect('localhost', 'root', '','db_contact');
+	/*function listcat(){*/
+		  $con = mysqli_connect('localhost', 'root', '','db_contact');
 
-	//define variables
-	$sql2 = "select * from category";
-	$list = mysqli_query($con,$sql2);
+//define variables
+$sql2 = "select catName from category";
+$list = mysqli_query($con,$sql2);
 
-	if($list)
-	{
-	  
-			while($row = mysqli_fetch_array($list)){
-			echo '<li><a href="../Categories/categories.html">' . $row["catName"] . '</a> </li>';
-												   }
-	}
-			
-	else{
-			echo		'<li><a href="../Categories/categories.html">Sport und Hobby</a> </li>';
-			echo		'<li><a href="../Categories/categories.html">Electronics</a> </li>';
-			echo		'<li><a href="../Categories/categories.html">Household</a> </li>';
-			echo		'<li><a href="../Categories/categories.html">Fashion</a> </li>';
-			echo		'<li><a href="../Categories/categories.html">Beauty</a> </li>';
-			echo		'<li><a href="../Categories/categories.html">Office</a> </li>';
-			echo		'<li><a href="../Categories/categories.html">Toys</a> </li>';
-			echo		'<li><a href="https://www.twitter.com">Education</a></li>';
-	}
+/*if($list)
+{*/
+  
+        while($row = mysqli_fetch_array($list)){
+			echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';
 
-	mysqli_free_result($list);
-	mysqli_close($con);
 		}
+/*}*/
 		
-		listcat();
-?>
-			
-			<!--	<li><a href="../Categories/categoires.html">Sport and Hobby</a> </li>
-				<li><a href="../Categories/categoires.html">Electronics</a> </li>
-				<li><a href="../Categories/categoires.html">Household</a> </li>
-				<li><a href="../Categories/categoires.html">Fashion</a> </li>
-				<li><a href="../Categories/categoires.html">Beauty</a> </li>
-				<li><a href="../Categories/categoires.html">Office</a> </li>
-				<li><a href="../Categories/categoires.html">Toys</a> </li>
-				<li><a href="https://www.twitter.com">Education</a></li>-->
-			</ul>
+/*else{
+		echo		'<li><a href="../Categories/categories.php">Sport und Hobby</a> </li>';
+		echo		'<li><a href="../Categories/categories.php">Electronics</a> </li>';
+		echo		'<li><a href="../Categories/categories.php">Household</a> </li>';
+		echo		'<li><a href="../Categories/categories.php">Fashion</a> </li>';
+		echo		'<li><a href="../Categories/categories.php">Beauty</a> </li>';
+		echo		'<li><a href="../Categories/categories.php">Office</a> </li>';
+		echo		'<li><a href="../Categories/categories.php">Toys</a> </li>';
+		echo		'<li><a href="https://www.twitter.com">Education</a></li>';
+}*/
+
+mysqli_free_result($list);
+mysqli_close($con);
+	/*}*/
+	
+print('
+
+</ul>
 		</nav>
 	</div>
 	
@@ -108,3 +104,6 @@
 		<span class="toright footerr"><a id = "footerr" href="../help/help.html"> Help and contact</a></span>
 	</footer>
 </body>
+');
+	
+?>
