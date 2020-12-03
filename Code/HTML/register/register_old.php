@@ -1,5 +1,4 @@
 <?php
-
 $con = mysqli_connect('localhost', 'root', '','db_contact');
 
 //define variables
@@ -7,42 +6,21 @@ $firstname=$lastname=$login=$password=$email=$phone="";
 
 // get the post records
 $firstname = $_POST['firstname'];
+include 'write.php';
 $lastname = $_POST['lastname'];
 $login = $_POST['login'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 
-// query database to check if there are any matching login names
-//login name should be unique
+/*echo $firstname;
+echo $lastname;
+echo $login;
+echo $password;
+echo $email;
+echo $phone;*/
 
-$check="SELECT * FROM customer WHERE login = '$_POST[login]'";
-$rs = mysqli_query($con,$check);
-$data = mysqli_fetch_array($rs, MYSQLI_NUM);
-if($data[0] > 1) {
-	$output = "Username Already Exists";
-	header("Location: http://localhost/hazi/Web_HF/Code/HTML/register/register2.php?uservalid=".$output);
-}
-
-	else if (!empty($firstname) && !empty($lastname))
-{
-	/*Register user*/
-    $newCustomer="INSERT INTO customer (customerFirstName, customerLastName, login,customerPassword,email,phone) VALUES ('$firstname', '$lastname', '$login', '$password','$email','$phone')";
-		if (mysqli_query($con,$newCustomer))
-			
-		header("Location: http://localhost/hazi/Web_HF/Code/HTML/login/login.html");
-
-        echo "You are now registered<br/>";
-    }
-	else
-    {
-       echo "<br> Errror....Values are not set in variables...!!!";
-    }
-
-mysqli_close($con);
-
-//***********OLD CODE***********
-/* // database insert SQL code
+// database insert SQL code
 if (!empty($firstname) && !empty($lastname))
   {
 $sql = "INSERT INTO customer (customerFirstName, customerLastName, login,customerPassword,email,phone) VALUES ('$firstname', '$lastname', '$login', '$password','$email','$phone')";
@@ -59,10 +37,10 @@ $list = mysqli_query($con,$sql2);
 if($rs)
 {
 	/*echo "Contact Records Inserted";*/
-//}
+}
 
 
-/* echo "<table>";
+echo "<table>";
             echo "<tr>";
                 echo "<th>id</th>";
                 echo "<th>name</th>";
@@ -76,13 +54,6 @@ if($rs)
         }
         echo "</table>";
 
-
-mysqli_free_result($list);
-
-
-mysqli_close($con);
-
-header("Location: http://localhost/hazi/Web_HF/Code/HTML/login/login.html"); */ 
-
-//***********END OF OLD CODE***********
+/*Jump to login after registration*/
+header("Location: http://localhost/hazi/Web_HF/Code/HTML/login/login.html");
 ?>

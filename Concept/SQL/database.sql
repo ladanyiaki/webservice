@@ -1,4 +1,4 @@
-
+/*
 
 -- Táblák létrehozása------------------------
 CREATE TABLE product(											-- Termékek tábla
@@ -77,21 +77,21 @@ INSERT INTO category VALUES ('Toy');
 INSERT INTO category VALUES ('Education');
 
 
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Running Shoes',19999,'Ft',13,NULL);		-- Termékek feltöltése (azért kell a paramétereket is leírni benne,
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Microcontroller',15490,'Ft',54,NULL);	-- mert az ID autoincrementen van)
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Drone',48490,'Ft',9,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Sledge',9999,'Ft',5,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Jacket',59900,'Ft',14,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Skijacket',120000,'Ft',21,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Trousers',14499,'Ft',37,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('TV',198990,'Ft',7,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Frigde',119999,'Ft',2,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Lipstick',3990,'Ft',45,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Parfume',11990,'Ft',27,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('6 Piece Set of Plates',4990,'Ft',30,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Laptop',245990,'Ft',11,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Exercise Book',499,'Ft',71,NULL);
-INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Pen',990,'Ft',123,NULL);
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Running Shoes',19999,'Ft',13,"../images/shoes.jpg");		-- Termékek feltöltése (azért kell a paramétereket is leírni benne,
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Microcontroller',15490,'Ft',54,"../images/microcontroller.jpg");	-- mert az ID autoincrementen van)
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Drone',48490,'Ft',9,"../images/drone.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Sledge',9999,'Ft',5,"../images/sledge.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Jacket',59900,'Ft',14,"../images/jacket.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Skijacket',120000,'Ft',21,"../images/skijacket.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Trousers',14499,'Ft',37,"../images/trousers.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('TV',198990,'Ft',7,"../images/tv.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Frigde',119999,'Ft',2,"../images/fridge.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Lipstick',3990,'Ft',45,"../images/lipstick.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Parfume',11990,'Ft',27,"../images/parfume.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('6 Piece Set of Plates',4990,'Ft',30,"../images/plates.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Laptop',245990,'Ft',11,"../images/laptop.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Exercise Book',499,'Ft',71,"../images/book.jpg");
+INSERT INTO product (productName,productPrice,priceUnit,Quantity,photolocation) VALUES ('Pen',990,'Ft',123,"../images/pen.jpg");
 
 
 INSERT INTO cp VALUES('Sport and Hobby',1);						-- Kategória-Termék kapcsolat tábla feltöltése
@@ -129,10 +129,10 @@ VALUES('Kiss','Pista', 'kisspistike','kiafeneazakispista2','kisspisti@email.kp',
 INSERT INTO shippingadress VALUES ('Budapest I. 1001 fő u. 1',1);		-- Próbavásárló két lakcíme
 INSERT INTO shippingadress VALUES ('Miskolc 3500 ló u. 14',1);
 
-
+*/
 
 -- Próbalekérdezések/ táblák ellenőrzése------------------------
-
+/*
 SELECT *
 FROM product;
 SELECT *
@@ -147,8 +147,20 @@ SELECT *
 FROM cart;
 SELECT *
 FROM purchased;
+*/
 
 
+SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
+FROM product p, cp
+WHERE p.productID = cp.productID;
+
+SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
+FROM product p, cp
+WHERE p.productID = cp.productID AND cp.catName = 'Electronics';
+
+SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
+FROM product p, cp
+GROUP BY productID;
 -- Táblák törlése------------------------
 /*
 DROP TABLE purchased;
@@ -157,5 +169,5 @@ DROP TABLE cp;
 DROP TABLE shippingadress;
 DROP TABLE category;
 DROP TABLE customer;
-DROP TABLE product;*/
-
+DROP TABLE product;
+*/

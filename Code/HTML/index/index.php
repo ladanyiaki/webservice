@@ -30,15 +30,24 @@ print('
 	/*function listcat(){*/
 		  $con = mysqli_connect('localhost', 'root', '','db_contact');
 
-//define variables
+//get category names
 $sql2 = "select catName from category";
 $list = mysqli_query($con,$sql2);
 
+
+/**/
+$sql3 = "SELECT p.productID, productName, productPrice, priceUnit, photoLocation
+FROM product p, cp
+GROUP BY productID;";
+
+$list2 = mysqli_query($con,$sql3);
 /*if($list)
 {*/
   
         while($row = mysqli_fetch_array($list)){
-			echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';
+			$phpVariable = $row['catName'];
+			/* Href insert GET */
+			echo '<li><a href="../Categories/categories.php?data=' .$phpVariable . '">' . $row['catName'] . '</a> </li>';
 
 		}
 /*}*/
@@ -54,8 +63,6 @@ $list = mysqli_query($con,$sql2);
 		echo		'<li><a href="https://www.twitter.com">Education</a></li>';
 }*/
 
-mysqli_free_result($list);
-mysqli_close($con);
 	/*}*/
 	
 print('
@@ -66,35 +73,39 @@ print('
 	
 	<div id="contents">
 		<div id="products">
-			<ul class="items">
-				<li class = "underline"> <span>
-											<a href="#" class="view">
-												<span class= "picturebox">
-													<img src="../images/kiwi3.png" class = "center_img" alt="">
-												</span>
-												<span class=underimg>
-													Red T-Shirt 
-												</span>
-												<span class=underimg2>
-													$1.00
-												</span>
-											</a>
-										 </span>
-												<br>
-				</li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<!--<li class="last"> <span><img src="../images/shirt-blue.jpg" alt=""></span> <span class="price">$1.00</span>Product name<br>
-					<a href="#" class="View">View</a> </li>-->
+			<ul class="items">');
+
+			/*Dynamic list element load*/
+	
+			/*Get category elements*/
+        while($row2 = mysqli_fetch_array($list2)){
+			/*echo '<li><a href="../Categories/categories.php">' . $row2['catName'] . '</a> </li>';*/
+			$productName = $row2['productName'];
+			$productPrice = $row2['productPrice'];
+			$priceUnit = $row2['priceUnit'];
+			$photoLocation = $row2['photoLocation'];
+		
+			print('	<li class = "underline"> <span>
+						<a href="#" class="view">
+							<span class= "picturebox">
+								<img src="'. $photoLocation. '" class = "center_img" alt="">
+							</span>
+							<span class=underimg>
+					');
+							echo $productName; 
+					print('	</span>
+							<span class=underimg2>
+						 ');
+							echo round($productPrice, 0); 
+							echo $priceUnit;
+							print('
+							</span>
+						</a>
+					 </span>
+							<br>
+				</li>');
+		}
+		print('
 			</ul>
 		 </div>
     </div>
@@ -104,6 +115,12 @@ print('
 		<span class="toright footerr"><a id = "footerr" href="../help/help.html"> Help and contact</a></span>
 	</footer>
 </body>
-');
+							  ');
+
+
+
+mysqli_free_result($list);
+mysqli_free_result($list2);
+mysqli_close($con);
 	
 ?>

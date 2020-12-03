@@ -37,7 +37,10 @@ $list = mysqli_query($con,$sql2);
 {*/
 		/*Get categories*/
         while($row = mysqli_fetch_array($list)){
-			echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';
+			/*echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';*/
+			$phpVariable = $row['catName'];
+			echo '<li><a href="../Categories/categories.php?data=' .$phpVariable . '">' . $row['catName'] . '</a> </li>';
+
 		}
 /*}		
 else{
@@ -51,9 +54,6 @@ else{
 		echo		'<li><a href="https://www.twitter.com">!</a></li>';
 }*/
 
-mysqli_free_result($list);
-mysqli_close($con);	
-/*$actual_cat = $_GET['varnamee'];	*/
 	print('
 	
 			</ul>
@@ -61,38 +61,75 @@ mysqli_close($con);
 	</div>
 	
 	<div id="category">
-		<p>');	echo $actual_cat; print('</p>
+		<p>');	
+		
+if (isset($_GET['data']))
+{
+
+    echo $actual_cat = $_GET['data'];
+}
+else
+{
+     echo $_GET['Category'];
+} 
+
+print('
+</p>
 	</div>
+');
+
+//define variables
+$sql3 = "SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
+FROM product p, cp
+WHERE p.productID = cp.productID AND cp.catName = '" .$actual_cat ."';";
+
+$list2 = mysqli_query($con,$sql3);
+
+/*if($list2)
+{*/
+
+
+
+print('
 	
 	<div id="contents">
 		<div id="products">
-			<ul class="items">
-				<li class = "underline"> <span>
+			<ul class="items">');
+
+			/*Dynamic list element load*/
+	
+			/*Get category elements*/
+        while($row = mysqli_fetch_array($list2)){
+			/*echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';*/
+			$productName = $row['productName'];
+			$productPrice = $row['productPrice'];
+			$priceUnit = $row['priceUnit'];
+			$photoLocation = $row['photoLocation'];
+			
+			print('		<li class = "underline"> <span>
 											<a href="#" class="view">
 												<span class= "picturebox">
-													<img src="../images/kiwi3.png" class = "center_img" alt="">
+													<img src="'. $photoLocation. '" class = "center_img" alt="">
 												</span>
-												<span class=underimg>
-													Red T-Shirt 
-												</span>
-												<span class=underimg2>
-													$1.00
-												</span>
+												<span class=underimg>');
+												echo $productName; 
+										print('	</span>
+												<span class=underimg2>');
+												echo round($productPrice, 0); 
+												echo $priceUnit;
+												print('</span>
 											</a>
 										 </span>
 												<br>
-				</li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
-				<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>
+				</li>');
+				/*<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>*/
+
+		}
+
+
+
+print('
+				<!--<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>-->
 				<!--<li class="last"> <span><img src="../images/shirt-blue.jpg" alt=""></span> <span class="price">$1.00</span>Product name<br>
 					<a href="#" class="View">View</a> </li>-->
 			</ul>
@@ -105,6 +142,9 @@ mysqli_close($con);
 	</footer>
 </body>
 ');
-	
+
+mysqli_free_result($list);
+mysqli_free_result($list2);
+mysqli_close($con);	
 	
 	?>

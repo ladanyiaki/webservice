@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+
+print('<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Kiwi Store - Register </title>
@@ -13,6 +14,14 @@
 		<a href = "../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a>
 
 		<p id="reg_text">Create an account!</p>
+		<p class = "warning"> ');
+
+if (isset($_GET['uservalid']))
+{
+    echo $actual_cat = $_GET['uservalid'];
+}		
+		
+print('</p> 
 		<form method = "post" autocomplete = "on" action = "register.php">
 			<p  class = "ind" >
 				<label>First Name*</label>
@@ -28,7 +37,7 @@
 				<input type="text" placeholder="Username" name="login" required />
 			</p>
 			<p class = "ind">
-				<label>Password*</label><br>
+				<label>Password*</label>
 				<input type="password" placeholder="Password" name="password" required />			
 			</p>
 			<p  class = "ind" >
@@ -48,4 +57,5 @@
 	</div>
 
 	
-</body>
+</body>');
+?>
