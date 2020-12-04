@@ -112,7 +112,7 @@ print('
 
 	<footer>
 		<span><em>Copyright &copy; 2020 Kiwi Store Inc.<sup>&reg;</sup>	</em> </span>
-		<span class="toright footerr"><a id = "footerr" href="../help/help.html"> Help and contact</a></span>
+		<span class="toright footerr"><a id = "footerr" href="../help/help.php"> Help and contact</a></span>
 	</footer>
 </body>
 							  ');

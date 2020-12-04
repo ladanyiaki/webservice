@@ -6,6 +6,8 @@ productID		INT	NOT NULL auto_increment,			-- auto ID megadás
 productName VARCHAR(25) NOT NULL,							-- 25 karakteres terméknév
 productPrice 	NUMERIC(10,2)   NOT NULL,					-- 10 karakteres ár, ebből 2 karakter tizedesjegy
 priceUnit VARCHAR(5) NOT NULL,
+shippingPrice NUMERIC(10,2)   NOT NULL,
+shpriceUnit VARCHAR(5) NOT NULL,
 quantity INT,												
 photoLocation VARCHAR(30),										-- Quantity és photolocation lehet null
 PRIMARY KEY (productID)
@@ -31,7 +33,7 @@ customerID INT  NOT NULL auto_increment,
 customerFirstName VARCHAR(35) NOT NULL,
 customerLastName VARCHAR(35) NOT NULL,
 login VARCHAR(25) NOT NULL,
-customerPassword VARCHAR (25) NOT NULL, 
+customerPassword VARCHAR (200) NOT NULL, 
 email VARCHAR(40),
 phone VARCHAR(15),
 PRIMARY KEY(customerID)
@@ -158,9 +160,13 @@ SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
 FROM product p, cp
 WHERE p.productID = cp.productID AND cp.catName = 'Electronics';
 
-SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
+SELECT p.productID, productName, productPrice, priceUnit, photoLocation
 FROM product p, cp
 GROUP BY productID;
+
+SELECT *
+FROM product p
+WHERE p.productID = '11';
 -- Táblák törlése------------------------
 /*
 DROP TABLE purchased;

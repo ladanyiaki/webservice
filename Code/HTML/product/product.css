@@ -5,6 +5,7 @@ html {
 body{
 	width: 100%;
 	height: 100%;
+	min-width: 590px;
 }
 
 header{
@@ -26,7 +27,7 @@ nav ul li{
 	display: inline;
 	margin: 1em;
 	vertical-align: middle;
-	font-family: Times New Roman;
+	font-family: 'Times New Roman';
 }
 
 /*For header*/
@@ -74,8 +75,6 @@ nav ul li{
 /*make logo background transparent when clicked*/
 #transparent a:active{
 	background-color: #ffffff00;
-		/*background-color: green;*/
-
 }
 
 
@@ -124,10 +123,10 @@ nav ul li{
 }
 
 /*Center content in div*/
-.center {
+/*.center {
   display: block;
   margin: auto;
-}
+}*/
 
 
 /*Username and Password indent*/
@@ -138,8 +137,11 @@ nav ul li{
 }
 
 .center_img{
-	vertical-align: middle;
-	width: 100%;
+	width: 90%;
+	max-height:100%;
+	margin-left: 15px;
+	margin-right: auto;
+	min-width: 200px;
 }
 
 .picturebox{
@@ -148,7 +150,7 @@ nav ul li{
 	height: 267.312px;
 	width: 216px;
 	margin: 0px;
-	padding: 0px;
+	padding: 2px;
 }
 
 footer{
@@ -169,3 +171,127 @@ footer{
 .footerr a:active{
 	text-decoration: none;
 }
+
+/* Pen-specific styles */
+html, body, section {
+  height: 100%;
+}
+
+/*Left side of main part --> product image*/
+.lefthalf{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 2px #b6701e;
+}
+
+/*Right side of main part --> details*/
+.righthalf{
+display: flex;
+flex-direction: column;
+justify-content: center;
+color: #fff;
+text-align: center;
+text-shadow: 0 2px 2px #b6701e;
+}
+
+.underline{
+	list-style-type:none;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Pattern styles */
+.container {
+  display: flex;
+}
+
+.lefthalf {
+
+  flex: 0.8;
+  padding: 0.5rem;
+}
+
+.righthalf {
+
+  flex: 1;
+  padding: 1rem;
+}
+
+/*NEW*/
+
+section {
+  width: 100%;
+}
+
+container{
+	width: initial;
+	height: initial;
+}
+
+article {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  padding: 1rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.left-blank{
+  float: left;
+  width: 5%;
+}
+
+#left-half {
+  float: left;
+  width: 45%;
+  border-color: red;
+}
+.right-half {
+  float: left;
+  width: 45%;
+}
+
+ /* "[" comes instantly after input  AND need "," after last input type */ 
+input[type=number]{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+#cart{ width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: bold;
+	text-decoration:none;
+}
+

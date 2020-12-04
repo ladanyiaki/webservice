@@ -1,11 +1,12 @@
 <?php
 session_start();
+$ID = '';
 	print('<!DOCTYPE html>
 	<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Kiwi Store</title>
-		<link rel="stylesheet" href="categories.css">     
+		<link rel="stylesheet" href="product.css">     
 		<link rel="shortcut icon" href="../images/kiwi3.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/php"></script>
@@ -42,46 +43,26 @@ $list = mysqli_query($con,$sql2);
 			echo '<li><a href="../Categories/categories.php?data=' .$phpVariable . '">' . $row['catName'] . '</a> </li>';
 
 		}
-/*}		
-else{
-		echo		'<li><a href="../Categories/categories.php">I</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">can</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">not</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">reach</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">the</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">database</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">dude</a> </li>';
-		echo		'<li><a href="https://www.twitter.com">!</a></li>';
-}*/
-
+		
 	print('
 	
 			</ul>
 		</nav>
 	</div>
-	
-	<div id="category">
-		<p>');	
+');	
 		
-if (isset($_GET['data']))
+if (isset($_GET['productID']))
 {
-
-    echo $actual_cat = $_GET['data'];
+ $ID = $_GET['productID'];
 }
-else
-{
-     echo $_GET['Category'];
-} 
 
-print('
-</p>
-	</div>
-');
+
+
 
 //define variables
-$sql3 = "SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
-FROM product p, cp
-WHERE p.productID = cp.productID AND cp.catName = '" .$actual_cat ."';";
+$sql3 = "SELECT *
+FROM product p
+WHERE p.productID = '11';";
 
 $list2 = mysqli_query($con,$sql3);
 
@@ -91,10 +72,27 @@ $list2 = mysqli_query($con,$sql3);
 
 
 print('
-	
-	<div id="contents">
-		<div id="products">
-			<ul class="items">');
+<section class="container">
+  <div class="left-blank">
+    <article>
+    </article>
+  </div>
+  <div id="left-half">
+	<article>
+		<span><a href="../images/tv.jpg" class="view">
+			<span>
+				<img src="../images/tv.jpg" alt="" class = "center_img">
+			</span>
+			</a>
+		</span><br>
+		</article>
+  </div>
+  <div class="right-half">
+    <article>
+	  <form method = "post" action = "../cart/cart.php">
+	  <ul class = "underline">
+		<li class = "forbutton">
+	');
 
 			/*Dynamic list element load*/
 	
@@ -105,24 +103,20 @@ print('
 			$productName = $row['productName'];
 			$productPrice = $row['productPrice'];
 			$priceUnit = $row['priceUnit'];
+			$quantity = $row['quantity'];
 			$photoLocation = $row['photoLocation'];
 			
-			print('		<li class = "underline"> <span>
-											<a href="../product/product.php?productid="'. $productID .' class="view">
-												<span class= "picturebox">
-													<img src="'. $photoLocation. '" class = "center_img" alt="">
-												</span>
-												<span class=underimg>');
-												echo $productName; 
-										print('	</span>
-												<span class=underimg2>');
-												echo round($productPrice, 0); 
-												echo $priceUnit;
-												print('</span>
-											</a>
-										 </span>
-												<br>
-				</li>');
+			print('		
+			
+					<h1>Pruduct name: ' .$productName .'</h1>
+					<!--<p>Price: ' . $productPrice . ' ' . $priceUnit . '</p>-->
+					<p>Available: ' . $quantity . '</p>
+				<!--<p>Shipping:</p> -->
+				<!--<p>Category:</p> -->
+					<input type="number" step="1" value = "1" min = "1" max = "' . $quantity . '"/><br><br>
+					<a href="../cart/addtocart.php" id = "cart">Add to cart</a><br><br><!-- COOKIE MOSTER-->
+					<input type="submit" value = "Buy">
+			');
 				/*<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>*/
 
 		}
@@ -130,12 +124,11 @@ print('
 
 
 print('
-				<!--<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>-->
-				<!--<li class="last"> <span><img src="../images/shirt-blue.jpg" alt=""></span> <span class="price">$1.00</span>Product name<br>
-					<a href="#" class="View">View</a> </li>-->
-			</ul>
-		 </div>
-    </div>
+	  </ul>
+	  </form>
+    </article>
+  </div>
+</section>
 
 	<footer>
 		<span><em>Copyright &copy; 2020 Kiwi Store Inc.<sup>&reg;</sup>	</em> </span>
