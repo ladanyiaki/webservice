@@ -127,6 +127,13 @@ a:active{
 	font-stretch: ultra-expanded;
 }
 
+.warn{
+	text-align: center; 
+	color: red;
+	font-weight: bold;
+	margin-top: 3px;
+}
+
 /*#parent{ for centering div
   height: 100%;
   display: flex;

@@ -1,5 +1,5 @@
-/*
 
+/*
 -- Táblák létrehozása------------------------
 CREATE TABLE product(											-- Termékek tábla
 productID		INT	NOT NULL auto_increment,			-- auto ID megadás
@@ -47,19 +47,21 @@ FOREIGN KEY (customerID) REFERENCES customer(customerID)
 );
 
 CREATE TABLE cart(												-- Kosár Tábla
+cartID INT  NOT NULL  auto_increment,
 customerID INT NOT NULL,
 productID INT NOT NULL,
 cartQuantity INT NOT NULL,
-PRIMARY KEY (customerID, productID),
+PRIMARY KEY (cartID),
 FOREIGN KEY (customerID) REFERENCES customer(customerID),
 FOREIGN KEY (productID) REFERENCES product(productID)
 );
 
 CREATE TABLE purchased (										-- megvásárol termékek tábla, vásárlás után ide kerül a kosár tartalma
+purchasedID INT  NOT NULL  auto_increment,
 productID INT NOT NULL,
 customerID INT NOT NULL,
 purchasedQuantity INT NOT NULL,
-PRIMARY KEY (customerID, productID),
+PRIMARY KEY (purchasedID),
 FOREIGN KEY (customerID) REFERENCES customer(customerID),
 FOREIGN KEY (productID) REFERENCES product(productID)
 );
@@ -131,8 +133,8 @@ VALUES('Kiss','Pista', 'kisspistike','kiafeneazakispista2','kisspisti@email.kp',
 INSERT INTO shippingadress VALUES ('Budapest I. 1001 fő u. 1',1);		-- Próbavásárló két lakcíme
 INSERT INTO shippingadress VALUES ('Miskolc 3500 ló u. 14',1);
 
-*/
 
+*/
 -- Próbalekérdezések/ táblák ellenőrzése------------------------
 /*
 SELECT *
@@ -149,7 +151,7 @@ SELECT *
 FROM cart;
 SELECT *
 FROM purchased;
-*/
+
 
 
 SELECT p.productID, catName, productName, productPrice, priceUnit, photoLocation
@@ -167,6 +169,12 @@ GROUP BY productID;
 SELECT *
 FROM product p
 WHERE p.productID = '11';
+
+select * from customer where customerID = "1";*/
+
+/*SELECT *
+FROM cart;*/
+
 -- Táblák törlése------------------------
 /*
 DROP TABLE purchased;

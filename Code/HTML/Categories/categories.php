@@ -1,33 +1,45 @@
 <?php
 session_start();
-	print('<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Kiwi Store</title>
-		<link rel="stylesheet" href="categories.css">     
-		<link rel="shortcut icon" href="../images/kiwi3.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script type="text/php"></script>
-	</head>
-	<body>
+$con = mysqli_connect('localhost', 'root', '','db_contact');
 
-		<header>
-				<nav id="navigation">
-					<ul>
-						<li id="transparent"><a href="../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> </li> <!-- Lehet CSS-be el kell rakni -->
-						<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>
-						<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
-					</ul>
-				</nav>	
-		</header>
+$userid="";
+
+if(isset($_COOKIE["user"])){
+$userid=$_COOKIE["user"];
+$sql = "select * from customer where customerID = '" . $userid . "';";
+$list0 = mysqli_query($con,$sql);
+while($row0 = $list0->fetch_assoc()){;
+$customerFirstName = $row0['customerFirstName'];
+}
+}
+print('
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kiwi Store</title>
+	<link rel="stylesheet" href="categories.css">     
+	<link rel="shortcut icon" href="../images/kiwi3.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+			<nav id="navigation">
+				<ul>
+					<li  id="transparent"><a href="../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> </li> <!-- Lehet CSS-be el kell rakni -->
+					<li class = "lia"><span>Hello, ');  
+					if(isset($customerFirstName)){echo $customerFirstName;}else{echo " customer";} 
+print( '</span></li>
+					<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>
+					<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
+				</ul>
+			</nav>	
+	</header>
 		
 	<div><!--  MÉRETEZD ÁT ADAPTÍVAN, ha kicsi az ablak összetolódik  -->
 		<nav title = "Hello there!"> <!-- Categories -->
-			<ul class = "lia2" id = "navigation2">		
-		');
+			<ul class = "lia2" id = "navigation2">
+');
 		
-$con = mysqli_connect('localhost', 'root', '','db_contact');
 
 //define variables
 $sql2 = "select catName from category";
@@ -108,7 +120,7 @@ print('
 			$photoLocation = $row['photoLocation'];
 			
 			print('		<li class = "underline"> <span>
-											<a href="../product/product.php?productid="'. $productID .' class="view">
+											<a href="../product/product.php?productid='. $productID .'"class="view">
 												<span class= "picturebox">
 													<img src="'. $photoLocation. '" class = "center_img" alt="">
 												</span>
@@ -126,8 +138,6 @@ print('
 				/*<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/roller.jpg" alt="" class = "center_img"></span><span class=underimg>Roller</span><span class=underimg2>$1.00</span></a></span><br></li>*/
 
 		}
-
-
 
 print('
 				<!--<li class = "underline"> <span><a href="#" class="view"><span class = "picturebox"><img src="../images/shirt-green.jpg" alt="" class = "center_img"></span><span class=underimg>Green T-Shirt </span><span class=underimg2>$1.00</span></a></span><br></li>-->

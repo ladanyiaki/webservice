@@ -259,8 +259,8 @@ article {
 }
 
  /* "[" comes instantly after input  AND need "," after last input type */ 
-input[type=number]{
-  width: 50%;
+input[type=number] {
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;

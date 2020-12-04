@@ -6,12 +6,16 @@
 	<link rel="stylesheet" href="login.css">     
 	<link rel="shortcut icon" href="../images/kiwi3.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="register.php"></script>
+
 </head>
 <body>
 	<div class = "center pos_border">
 		<a href = "../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> <!-- Lehet CSS-be el kell rakni -->
 		<p id="login_text">Hello, please sign in!</p>
+
+<p class="warn">Wrong username or password, please try again!</p>
+		
+
 		<form method = "post" autocomplete = "on" action = "login.php">
 			<p  class = "center ind" >
 				<label>Username</label><br>

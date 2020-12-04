@@ -12,6 +12,7 @@ $login = $_POST['login'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
+$hashed_password = password_hash($password,PASSWORD_DEFAULT);
 
 // query database to check if there are any matching login names
 //login name should be unique
@@ -27,7 +28,7 @@ if($data[0] > 1) {
 	else if (!empty($firstname) && !empty($lastname))
 {
 	/*Register user*/
-    $newCustomer="INSERT INTO customer (customerFirstName, customerLastName, login,customerPassword,email,phone) VALUES ('$firstname', '$lastname', '$login', '$password','$email','$phone')";
+    $newCustomer="INSERT INTO customer (customerFirstName, customerLastName, login,customerPassword,email,phone) VALUES ('$firstname', '$lastname', '$login', '$hashed_password','$email','$phone')";
 		if (mysqli_query($con,$newCustomer))
 			
 		header("Location: http://localhost/hazi/Web_HF/Code/HTML/login/login.html");
