@@ -18,7 +18,7 @@ $customerFirstName = $row0['customerFirstName'];
 	<head>
 		<meta charset="utf-8">
 		<title>Kiwi Store</title>
-		<link rel="stylesheet" href="product.css">     
+		<link rel="stylesheet" href="product.CSS">     
 		<link rel="shortcut icon" href="../images/kiwi3.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/php"></script>
@@ -31,8 +31,16 @@ $customerFirstName = $row0['customerFirstName'];
 					<li  id="transparent"><a href="../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> </li> <!-- Lehet CSS-be el kell rakni -->
 					<li class = "lia"><span>Hello, ');  
 					if(isset($customerFirstName)){echo $customerFirstName;}else{echo " customer";} 
-print( '</span></li>
-					<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>
+print( '</span></li>');
+					
+					if(isset($customerFirstName)){
+						echo '<li class = "signout toright"><a href="../login/signout.php">Sign out</a></li>';
+						}
+					else{
+						echo '<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>';
+						} 
+
+					print('
 					<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
 				</ul>
 			</nav>	

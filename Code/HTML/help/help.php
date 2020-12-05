@@ -1,11 +1,24 @@
 <?php
 session_start();
+$con = mysqli_connect('localhost', 'root', '','db_contact');
+
+$userid="";
+
+if(isset($_COOKIE["user"])){
+$userid=$_COOKIE["user"];
+$sql = "select * from customer where customerID = '" . $userid . "';";
+$list0 = mysqli_query($con,$sql);
+while($row0 = $list0->fetch_assoc()){;
+$customerFirstName = $row0['customerFirstName'];
+}
+}
+
 	print('<!DOCTYPE html>
 	<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Kiwi Store</title>
-		<link rel="stylesheet" href="help.css">     
+		<link rel="stylesheet" href="help.CSS">     
 		<link rel="shortcut icon" href="../images/kiwi3.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/php"></script>
@@ -16,7 +29,18 @@ session_start();
 				<nav id="navigation">
 					<ul>
 						<li id="transparent"><a href="../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> </li> <!-- Lehet CSS-be el kell rakni -->
-						<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>
+						<li class = "lia"><span>Hello, ');  
+					if(isset($customerFirstName)){echo $customerFirstName;}else{echo " customer";} 
+print( '</span></li>');
+					
+					if(isset($customerFirstName)){
+						echo '<li class = "signout toright"><a href="../login/signout.php">Sign out</a></li>';
+						}
+					else{
+						echo '<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>';
+						} 
+
+					print('
 						<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
 					</ul>
 				</nav>	
