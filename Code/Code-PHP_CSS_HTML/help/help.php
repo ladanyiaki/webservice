@@ -42,6 +42,7 @@ print( '</span></li>');
 
 					print('
 						<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
+						<li class = "lia toright"><a href="../cart/cart.php">Cart</a></li>
 					</ul>
 				</nav>	
 		</header>

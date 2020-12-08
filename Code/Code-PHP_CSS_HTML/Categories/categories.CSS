@@ -33,17 +33,19 @@ nav ul li{
 }
 
 #category{
-	background-color: #ccffcc;
+	background: url("../images/category.png");
+	background-repeat: repeat;
 	padding: 1px;
 	border-radius: 5px;
 	padding-left: 25px;
 	font-style: bold;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	font-family: Texturina, serif;
+	width: 98%;
 }
 
-/*For header*/
 
+/*For header*/
 
 .signout a{
 	border: 2px solid #ff9999;

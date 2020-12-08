@@ -17,7 +17,7 @@ print('
 <head>
 	<meta charset="utf-8">
 	<title>Kiwi Store</title>
-	<link rel="stylesheet" href="categories.CSS">     
+	<link rel="stylesheet" href="categories.css">     
 	<link rel="shortcut icon" href="../images/kiwi3.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -39,6 +39,7 @@ print( '</span></li>');
 
 					print('
 					<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
+					<li class = "lia toright"><a href="../cart/cart.php">Cart</a></li>
 				</ul>
 			</nav>	
 	</header>
@@ -53,26 +54,12 @@ print( '</span></li>');
 $sql2 = "select catName from category";
 $list = mysqli_query($con,$sql2);
 
-/*if($list)
-{*/
 		/*Get categories*/
         while($row = mysqli_fetch_array($list)){
 			/*echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';*/
 			$phpVariable = $row['catName'];
 			echo '<li><a href="../Categories/categories.php?data=' .$phpVariable . '">' . $row['catName'] . '</a> </li>';
-
 		}
-/*}		
-else{
-		echo		'<li><a href="../Categories/categories.php">I</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">can</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">not</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">reach</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">the</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">database</a> </li>';
-		echo		'<li><a href="../Categories/categories.php">dude</a> </li>';
-		echo		'<li><a href="https://www.twitter.com">!</a></li>';
-}*/
 
 	print('
 	
@@ -104,11 +91,6 @@ FROM product p, cp
 WHERE p.productID = cp.productID AND cp.catName = '" .$actual_cat ."';";
 
 $list2 = mysqli_query($con,$sql3);
-
-/*if($list2)
-{*/
-
-
 
 print('
 	

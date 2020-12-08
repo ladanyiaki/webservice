@@ -38,6 +38,7 @@ print( '</span></li>');
 						} 
 						print('
 						<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
+						<li class = "lia toright"><a href="../cart/cart.php">Cart</a></li>
 					</ul>
 				</nav>	
 		</header>
@@ -73,7 +74,6 @@ $list = mysqli_query($con,$sql2);
 			/*echo '<li><a href="../Categories/categories.php">' . $row['catName'] . '</a> </li>';*/
 			$phpVariable = $row['catName'];
 			echo '<li><a href="../Categories/categories.php?data=' .$phpVariable . '">' . $row['catName'] . '</a> </li>';
-
 		}
 
 
@@ -121,13 +121,11 @@ $list = mysqli_query($con,$sql2);
 				$priceUnit = $row['priceUnit'];
 				$quantity= $row['SUM(c.cartQuantity)'];
 				$totalPrice=$totalPrice+$productPrice*$quantity;
-				echo '<a href="../product/product.php?productid=' .$productID . '">' . $productName . '</a> <p> Quantity:'.$quantity. '</p><p> Price:'. round($productPrice,0) .' '.$priceUnit.'/piece</p>';
-				echo '<span class = "lia " style = float:right><a href="../cart/cartdelete.php?data='.$productID.'">Delete</a></span>';
-			
-				
+				echo '<div class = "overline2"><a href="../product/product.php?productid=' .$productID . '">' . $productName . '</a> <p> Quantity:'.$quantity. '</p><p> <span>Price: '. round($productPrice,0) .' '.$priceUnit.'/piece</span>';
+				echo '<span class = "lia " style = float:right><a href="../cart/cartdelete.php?data='.$productID.'">Delete</a></span></p></div>';
 			}
-		echo'<p> Cart Total: ' . $totalPrice . ' '; 
-		if (isset($priceUnit)){echo $priceUnit;} else {echo 'Ft';} print('</p>');
+		echo'<div class = "overline"><p> Cart Total: ' . $totalPrice . ' '; 
+		if (isset($priceUnit)){echo $priceUnit;} else {echo 'Ft';} print('</p></div>');
 		
 		}
 		else{
