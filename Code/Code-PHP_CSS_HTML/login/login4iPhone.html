@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kiwi Store - Login </title>
+	<link rel="stylesheet" href="login.css">     
+	<link rel="shortcut icon" href="../images/kiwi3.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html {
+	font-family: Helvitica, Arial, sans-serif ;
+}
+
+.pos_border /*define only div*/ 
+{
+border-radius: 10px;
+border: 1px solid #73AD21;
+padding: 10px; 
+display: block;
+max-width:100%;
+max-height:100%;
+vertical-align: middle;
+width: 35%;
+height: auto;
+background-color: #d3f8d3;
+min-width: 250px;
+opacity: 0.95;
+padding: 15pt;
+margin: 8pt;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+  max-width: 260px;
+  }
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.15 em;
+  font-weight: bold;
+}
+
+input[type=text],input[type=password],input[type=tel],input[type=email], select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}
+
+
+#remember{
+	font-size: 0.3 em;
+}
+
+body
+{/*This only sets background*/
+	background-image: url("../images/background2.png");
+	background-repeat: repeat;
+	height: 100%;
+}
+
+/*Place object to bot left - Unused*/
+.bottom_left {
+  width:5%;
+  height: auto;
+  position: absolute;
+  bottom: 16px;
+  left: 16px; 
+  opacity: 0.4;
+  min-width: 50px;
+
+}
+/*Center content in div*/
+.center {
+  display: block;
+  margin: auto;
+}
+/*center div*/
+/*.center_div{ 
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}*/
+
+/*Set form size compared to window*/
+.form
+{
+	  width: 35%;
+}
+
+/*Set link style*/
+a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+a:active{
+	text-decoration: none;
+	color: red;	
+}
+
+
+/*Username and Password indent*/
+.ind { 
+	color: green;
+	text-indent: 15px;
+	font-weight: bold;
+}
+
+#login_text{
+	font-size: 18pt;
+	text-align:center;
+	font-weight: bold;
+}
+
+#reg_text{
+	font-size: 18pt;
+	text-align:center;
+	font-weight: bold;
+	font-stretch: ultra-expanded;
+}
+
+/*#parent{ for centering div
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+</style>
+</head>
+<body>
+  	<!-- <img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/> --> <!-- Lehet CSS-be el kell rakni -->
+<!--	<div id="parent"> for centering content -->
+	<div class = "center pos_border">
+		<img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/> <!-- Lehet CSS-be el kell rakni -->
+		<p id="login_text">Hello, please sign in!</p>
+		<form method = "post" autocomplete = "on">
+			<p  class = "center ind" >
+				<label>Username</label><br>
+				<input type="text" placeholder="Username" name="login" required />
+			</p>
+			<p class = "ind">
+				<label>Password</label><br>
+				<input type="password" placeholder="Password" name="password" required />			
+			</p>
+			<label>
+				<input type="checkbox" name="remember"/> Remember me
+			</label><br><br>
+			
+			<input type="submit" value = "Login"/>
+		</form><br>
+	<a href="../register/register.html">Create an account</a>
+	</div>
+	<!-- <img src="images/kiwi_fruit.png" class="bottom_left" alt = "bot_left_logo"/>  -->
+<!--	</div>   -->
+
+	
+</body>

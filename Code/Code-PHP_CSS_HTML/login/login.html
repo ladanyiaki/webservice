@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kiwi Store - Login </title>
+	<link rel="stylesheet" href="login.css">     
+	<link rel="shortcut icon" href="../images/kiwi3.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="register.php"></script>
+</head>
+<body>
+	<div class = "center pos_border">
+		<a href = "../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> <!-- Lehet CSS-be el kell rakni -->
+		<p id="login_text">Hello, please sign in!</p>
+		<form method = "post" autocomplete = "on" action = "login.php">
+			<p  class = "center ind" >
+				<label>Username</label><br>
+				<input type="text" placeholder="Username" name="login" required />
+			</p>
+			<p class = "ind">
+				<label>Password</label><br>
+				<input type="password" placeholder="Password" name="password" required />			
+			</p>
+			<label id="remember">
+				<input type="checkbox" name="remember" /> Remember me
+			</label><br><br>
+			
+			<input type="submit" value = "Login"/>
+		</form><br>
+	<a href="../register/register.html">Create an account</a>
+	</div>	
+</body>

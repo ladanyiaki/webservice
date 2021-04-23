@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kiwi Store</title>
+	<link rel="stylesheet" href="product.css">     
+	<link rel="shortcut icon" href="../images/kiwi3.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<header>
+			<nav id="navigation" >
+				<ul>
+					<li  id="transparent"><a href="../index/index.php"><img src = "../images/kiwi_store.png" class = "logo" alt="kiwi_logo"/></a> </li> <!-- Lehet CSS-be el kell rakni -->
+					<li class = "lia toright"><a href="../login/login.html">Sign in</a></li>
+					<li class = "lia toright"><a href="../register/register.html">Create an account</a></li>
+				</ul>
+			</nav>
+			
+	</header>
+
+	<div><!--  MÉRETEZD ÁT ADAPTÍVAN, ha kicsi az ablak összetolódik  -->
+		<nav title = "Hello there!"> <!-- Categories -->
+			<ul class = "lia2 container" id = "navigation2">
+				<li><a href="../index/index.html">Sport&nbsp;and&nbsp;Hobby</a> </li>
+				<li><a href="../index/index.html">Electronics</a> </li>
+				<li><a href="../index/index.html">Household</a> </li>
+				<li><a href="../index/index.html">Fashion</a> </li>
+				<li><a href="../index/index.html">Beauty</a> </li>
+				<li><a href="../index/index.html">Office</a> </li>
+				<li><a href="../index/index.html">Toys</a> </li>
+				<li><a href="https://www.twitter.com">Education</a></li>
+			</ul>
+		</nav>
+	</div>
+
+<section class="container">
+  <div class="left-blank">
+    <article>
+    </article>
+  </div>
+  <div id="left-half">
+	<span><a href="../images/tv.jpg" class="view">
+		<span>
+			<img src="../images/tv.jpg" alt="" class = "center_img">
+		</span>
+		</a>
+	</span><br>
+  </div>
+  <div class="right-half">
+    <article>
+	  <form method = "post" action = "../cart/cart.php">
+	  <ul class = "underline">
+		<li class = "forbutton">
+		  <p>productName</p>
+		  <p>Price: productPrice+ProductUnit</p>
+		  <p>Available: quantity</p>
+	<!--  <p>Shipping:</p> -->
+	<!--  <p>Category:</p> -->
+		  <p>Available:</p>
+		  <input type="number" step="1" value = "1" min = "1" max = "42"/><br><br>
+		  <a href="../cart/addtocart.php" id = "cart">Add to cart</a><br><br><!-- COOKIE MOSTER-->
+		  <input type="submit" value = "Buy">
+		  </li>
+	  </ul>
+	  </form>
+    </article>
+  </div>
+</section>
+	
+	<footer>
+		<span><em>Copyright &copy; 2020 Kiwi Store Inc.<sup>&reg;</sup>	</em> </span>
+		<span class="toright footerr"><a id = "footerr" href="../help/help.php"> Help and contact</a></span>
+	</footer>
+</body>

@@ -1,0 +1,214 @@
+html {
+	font-family: Helvitica, Arial,  sans-serif ;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+}
+
+header{
+	background-image: url("../images/background2.png");
+	background-repeat: repeat;
+	margin: 3px 10px;
+	border-bottom: 1px solid #cae8cb;
+	border-top: 1px solid #cae8cb;
+	
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-left: 10px;
+  }
+
+
+nav ul li{
+	list-style: none;
+	display: inline;
+	margin: 1em;
+	vertical-align: middle;
+	font-family: Times New Roman;
+}
+
+#category{
+	background-color: #ccffcc;
+	padding: 1px;
+	border-radius: 5px;
+}
+
+/*For header*/
+
+.signout a{
+	border: 2px solid #ff9999;
+	border-radius: 10px;
+	padding: 8px;
+	margin-right: 20px;
+}
+
+.signout a:hover{
+	font-weight: bold;
+	background-color: red;
+	border-color: red;
+}
+
+.signout a:visited{
+	color: red;
+	background-color: white;
+	text-decoration: none;
+}
+
+.signout a:link{
+	color: red;
+	background-color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#navigation .signout a:active{
+	color: white;
+	background-color: red;
+	font-weight: bold;
+	text-decoration: none;
+	border-color: red;
+}
+
+.toright a{
+	float: right;
+}
+
+.lia a{
+	border: 2px solid #cae8cb;
+	border-radius: 10px;
+	padding: 8px;
+	margin-right: 20px;
+}
+
+.lia a:hover{
+	font-weight: bold;
+	background-color: green;
+	border-color: #95d097;
+}
+
+.lia a:visited{
+	color: green;
+	background-color: white;
+	text-decoration: none;
+}
+
+.lia a:link{
+	color: green;
+	background-color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*For header*/
+#navigation a:active{
+	color: white;
+	background-color: #95d097;
+	font-weight: bold;
+	text-decoration: none;
+	border-color: #95d097;
+}
+
+/*make logo background transparent when clicked*/
+#transparent a:active{
+	background-color: #ffffff00;
+}
+
+/*Categories*/
+.lia2 a{
+	vertical-align: middle;
+	border-bottom: 2px solid #cae8cb;
+	padding: 8px;
+	margin-right: 20px;
+}
+
+.lia2 a:hover{
+	font-weight: bold;
+	background-color: green;
+	border-color: #95d097;
+	border-top: 2px solid #95d097;
+}
+
+.lia2 a:visited{
+	color: green;
+	background-color: white;
+	text-decoration: none;
+}
+
+.lia2 a:link{
+	color: green;
+	background-color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*Categories*/
+#navigation2{
+	display: flex;
+    justify-content: space-between;
+	padding: 20px;
+	padding-top: 0px;
+	border-bottom: 1px dashed  #95d097;
+}
+
+#navigation2 a:active{
+	font-weight: bold;
+	text-decoration: none;
+	border-color: green;
+	border-radius: 20px;
+}
+
+/*Center content in div*/
+.center {
+  display: block;
+  margin: auto;
+}
+
+
+/*Username and Password indent*/
+.ind { 
+	color: green;
+	text-indent: 15px;
+	font-weight: bold;
+}
+
+.center_img{
+	vertical-align: middle;
+	width: 100%;
+}
+
+.picturebox{
+
+	border: 2px solid #95d097;
+	height: 267.312px;
+	width: 216px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.help{
+	margin: 50px;
+	padding-bottom: 50px;
+	padding-top: 40px;
+}
+
+footer{
+	font-size: 0.8em;
+	font-style: italic;
+	border-top: 1px solid #95d097;
+	padding-top: 2px;
+}
+
+.footerr a:visited, .footerr a:link, .footerr a:hover{
+	color: gray;
+	font-size: 0.9em;
+	padding-top: 3px;
+	padding-right: 30px;
+}
+
+.footerr a:active{
+	text-decoration: none;
+}

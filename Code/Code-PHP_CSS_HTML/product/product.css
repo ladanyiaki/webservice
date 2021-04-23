@@ -1,0 +1,331 @@
+html {
+	font-family: Helvitica, Arial,  sans-serif ;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	min-width: 590px;
+}
+
+header{
+	background-image: url("../images/background2.png");
+	background-repeat: repeat;
+	margin: 3px 10px;
+	border-bottom: 1px solid #cae8cb;
+	border-top: 1px solid #cae8cb;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-left: 10px;
+  }
+
+nav ul li{
+	list-style: none;
+	display: inline;
+	margin: 1em;
+	vertical-align: middle;
+	font-family: 'Times New Roman';
+}
+
+/*For header*/
+
+.signout a{
+	border: 2px solid #ff9999;
+	border-radius: 10px;
+	padding: 8px;
+	margin-right: 20px;
+}
+
+.signout a:hover{
+	font-weight: bold;
+	background-color: red;
+	border-color: red;
+}
+
+.signout a:visited{
+	color: red;
+	background-color: white;
+	text-decoration: none;
+}
+
+.signout a:link{
+	color: red;
+	background-color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#navigation .signout a:active{
+	color: white;
+	background-color: red;
+	font-weight: bold;
+	text-decoration: none;
+	border-color: red;
+}
+
+.toright a{
+	float: right;
+}
+
+.lia a{
+	border: 2px solid #cae8cb;
+	border-radius: 10px;
+	padding: 8px;
+	margin-right: 20px;
+}
+
+.lia a:hover{
+	font-weight: bold;
+	background-color: green;
+	border-color: #95d097;
+}
+
+.lia a:visited{
+	color: green;
+	background-color: white;
+	text-decoration: none;
+}
+
+.lia a:link{
+	color: green;
+	background-color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*For header*/
+#navigation a:active{
+	color: white;
+	background-color: #95d097;
+	font-weight: bold;
+	text-decoration: none;
+	border-color: #95d097;
+}
+
+
+/*make logo background transparent when clicked*/
+#transparent a:active{
+	background-color: #ffffff00;
+}
+
+
+/*Categories*/
+.lia2 a{
+	vertical-align: middle;
+	border-bottom: 2px solid #cae8cb;
+	padding: 8px;
+	margin-right: 20px;
+}
+
+.lia2 a:hover{
+	font-weight: bold;
+	background-color: green;
+	border-color: #95d097;
+	border-top: 2px solid #95d097;
+}
+
+.lia2 a:visited{
+	color: green;
+	background-color: white;
+	text-decoration: none;
+}
+
+.lia2 a:link{
+	color: green;
+	background-color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/*Categories*/
+#navigation2{
+	display: flex;
+    justify-content: space-between;
+	padding: 20px;
+	padding-top: 0px;
+	border-bottom: 1px dashed  #95d097;
+}
+
+#navigation2 a:active{
+	font-weight: bold;
+	text-decoration: none;
+	border-color: green;
+	border-radius: 20px;
+}
+
+/*Center content in div*/
+/*.center {
+  display: block;
+  margin: auto;
+}*/
+
+
+/*Username and Password indent*/
+.ind { 
+	color: green;
+	text-indent: 15px;
+	font-weight: bold;
+}
+
+.center_img{
+	width: 90%;
+	max-height:100%;
+	margin-left: 15px;
+	margin-right: auto;
+	min-width: 200px;
+}
+
+.picturebox{
+
+	border: 2px solid #95d097;
+	height: 267.312px;
+	width: 216px;
+	margin: 0px;
+	padding: 2px;
+}
+
+footer{
+	font-size: 0.8em;
+	font-style: italic;
+	border-top: 1px solid #95d097;
+	padding-top: 2px;
+}
+
+/*Set Footer properties for links*/
+.footerr a:visited, .footerr a:link, .footerr a:hover{ 
+	color: gray;
+	font-size: 0.9em;
+	padding-top: 3px;
+	padding-right: 30px;
+}
+
+.footerr a:active{
+	text-decoration: none;
+}
+
+/* Pen-specific styles */
+html, body, section {
+  height: 100%;
+}
+
+/*Left side of main part --> product image*/
+.lefthalf{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 2px #b6701e;
+}
+
+/*Right side of main part --> details*/
+.righthalf{
+display: flex;
+flex-direction: column;
+justify-content: center;
+color: #fff;
+text-align: center;
+text-shadow: 0 2px 2px #b6701e;
+}
+
+.underline{
+	list-style-type:none;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Pattern styles */
+.container {
+  display: flex;
+}
+
+.lefthalf {
+
+  flex: 0.8;
+  padding: 0.5rem;
+}
+
+.righthalf {
+
+  flex: 1;
+  padding: 1rem;
+}
+
+/*NEW*/
+
+section {
+  width: 100%;
+}
+
+container{
+	width: initial;
+	height: initial;
+}
+
+article {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  padding: 1rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.left-blank{
+  float: left;
+  width: 5%;
+}
+
+#left-half {
+  float: left;
+  width: 45%;
+  border-color: red;
+}
+.right-half {
+  float: left;
+  width: 45%;
+}
+
+ /* "[" comes instantly after input  AND need "," after last input type */ 
+input[type=number] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+#cart{ width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: bold;
+	text-decoration:none;
+}
+
